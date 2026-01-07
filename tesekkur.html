@@ -1,1 +1,138 @@
-<!doctype html> <html lang="tr"> <head> <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"> <title>Teşekkürler!</title> <link rel="preconnect" href="https://fonts.googleapis.com"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet"> <style> body{margin:0;display:grid;place-items:center;min-height:100vh;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#F6F0E8;color:#333} .card{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.1);padding:24px;text-align:center;max-width:520px} .btn{display:inline-block;margin-top:12px;background:#C8A24D;color:#fff;padding:10px 16px;border-radius:999px;text-decoration:none} .kucuk{font-size:13px;color:#666} </style> </head> <body> <div class="card"> <h1>Alındı!</h1> <p>Bu gerçek sipariş değil; sevgi sinyali. En kısa sürede sana özel parçayı yapmaya başlıyorum.</p> <a class="btn" href="index.html">Geri dön</a> <p class="kucuk">İstek mesajın e‑posta olarak bana ulaştı.</p> </div> <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script> <script>confetti({particleCount:160, spread:80, origin:{y:0.6}});</script> </body> </html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Thank You — The Artisan's Treasury</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --parchment: #2a2418;
+      --dark-brown: #1a1611;
+      --gold: #d4af37;
+      --old-gold: #b8941e;
+      --bronze: #8b6914;
+      --text-light: #e8dcc0;
+      --text-dim: #c4b89a;
+      --border-gold: #6b5d2e;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Crimson Text', serif;
+      color: var(--text-light);
+      background: var(--dark-brown);
+      background-image: 
+        radial-gradient(circle at 20% 50%, rgba(139, 105, 20, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+        linear-gradient(180deg, var(--dark-brown) 0%, #1f1a14 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      background: var(--parchment);
+      border: 2px solid var(--border-gold);
+      border-radius: 8px;
+      padding: 60px 40px;
+      text-align: center;
+      max-width: 600px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(212, 175, 55, 0.1);
+      position: relative;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      font-size: 2.5rem;
+      color: var(--gold);
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.3);
+      letter-spacing: 2px;
+    }
+
+    p {
+      color: var(--text-dim);
+      font-size: 1.2rem;
+      line-height: 2;
+      margin-bottom: 30px;
+      font-style: italic;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 30px;
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--border-gold);
+      border-radius: 4px;
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+
+    .btn:hover {
+      background: rgba(212, 175, 55, 0.1);
+      border-color: var(--gold);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+    }
+
+    .decorative-line {
+      width: 200px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 30px auto;
+      position: relative;
+    }
+
+    .decorative-line::before,
+    .decorative-line::after {
+      content: '✦';
+      position: absolute;
+      top: -8px;
+      color: var(--gold);
+      font-size: 16px;
+    }
+
+    .decorative-line::before {
+      left: 50%;
+      transform: translateX(-50px);
+    }
+
+    .decorative-line::after {
+      right: 50%;
+      transform: translateX(50px);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Thank You</h1>
+    <div class="decorative-line"></div>
+    <p>Your interest in these handcrafted treasures is greatly appreciated. Each piece is crafted with care and dedication, bringing together the beauty of the sea and the skill of the artisan.</p>
+    <a class="btn" href="index.html">Return to Collection</a>
+  </div>
+</body>
+</html>

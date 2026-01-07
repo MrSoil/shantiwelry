@@ -17,6 +17,7 @@
       --text-light: #e8dcc0;
       --text-dim: #c4b89a;
       --border-gold: #6b5d2e;
+      --bank-wood: #3d2f1f;
     }
 
     * {
@@ -62,6 +63,60 @@
       background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
 
+    .characters-showcase {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .character-portrait {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid var(--border-gold);
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, #3a2f1f 0%, #2a2418 100%);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .character-portrait:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.8), 0 0 30px rgba(212, 175, 55, 0.4);
+    }
+
+    .character-portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+    }
+
+    .character-portrait::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.6) 100%);
+    }
+
+    .character-name {
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Cinzel', serif;
+      font-size: 0.75rem;
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      white-space: nowrap;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
     h1 {
       font-family: 'Cinzel', serif;
       font-size: 3.5rem;
@@ -104,6 +159,41 @@
     .decorative-line::after {
       right: 50%;
       transform: translateX(50px);
+    }
+
+    .vesemir-quote {
+      margin: 30px auto;
+      max-width: 700px;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.3);
+      border-left: 4px solid var(--gold);
+      border-radius: 4px;
+      font-style: italic;
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      position: relative;
+    }
+
+    .vesemir-quote::before {
+      content: '"';
+      font-size: 4rem;
+      color: var(--gold);
+      opacity: 0.3;
+      position: absolute;
+      top: -10px;
+      left: 15px;
+      font-family: 'Cinzel', serif;
+    }
+
+    .vesemir-quote::after {
+      content: '— Vesemir';
+      display: block;
+      margin-top: 15px;
+      text-align: right;
+      font-size: 0.9rem;
+      color: var(--gold);
+      font-style: normal;
+      font-family: 'Cinzel', serif;
     }
 
     .grid {
@@ -237,31 +327,196 @@
       font-size: 1.5rem;
     }
 
-    .total-section {
-      text-align: center;
-      margin: 60px 0;
-      padding: 40px;
-      background: var(--parchment);
-      border: 2px solid var(--border-gold);
+    .exchange-section {
+      margin: 80px 0;
+      padding: 0;
+      background: var(--bank-wood);
+      border: 3px solid var(--border-gold);
       border-radius: 8px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8), inset 0 0 50px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
     }
 
-    .total-label {
+    .exchange-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      background: linear-gradient(180deg, rgba(212, 175, 55, 0.2) 0%, transparent 100%);
+      border-bottom: 2px solid var(--border-gold);
+    }
+
+    .bank-header {
+      padding: 30px 40px 20px;
+      background: linear-gradient(180deg, rgba(61, 47, 31, 0.8) 0%, rgba(42, 36, 24, 0.6) 100%);
+      border-bottom: 2px solid var(--border-gold);
+      position: relative;
+    }
+
+    .bank-header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+
+    .bank-title {
+      font-family: 'Cinzel', serif;
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    }
+
+    .bank-subtitle {
+      text-align: center;
+      color: var(--text-dim);
+      font-style: italic;
+      font-size: 1rem;
+    }
+
+    .bank-content {
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .exchange-rates {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 40px;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 8px;
+      border: 1px solid var(--border-gold);
+    }
+
+    .rate-item {
+      text-align: center;
+      padding: 20px;
+      border: 2px solid var(--border-gold);
+      border-radius: 6px;
+      background: rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .rate-item::before {
+      content: '';
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      border-radius: 4px;
+    }
+
+    .rate-item .currency-name {
       font-family: 'Cinzel', serif;
       font-size: 1.2rem;
-      color: var(--text-dim);
+      color: var(--gold);
+      margin-bottom: 10px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 15px;
+      letter-spacing: 1px;
     }
 
-    .total-price {
+    .rate-item .rate-value {
+      color: var(--text-light);
+      font-size: 1rem;
+      font-style: italic;
+    }
+
+    .converter {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+
+    .currency-input-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .currency-input-group label {
       font-family: 'Cinzel', serif;
-      font-size: 3rem;
+      font-size: 1.1rem;
       color: var(--gold);
-      font-weight: 700;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 20px rgba(212, 175, 55, 0.4);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .currency-input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .currency-input {
+      width: 100%;
+      padding: 15px 50px 15px 20px;
+      background: rgba(0, 0, 0, 0.5);
+      border: 2px solid var(--border-gold);
+      border-radius: 6px;
+      color: var(--text-light);
+      font-family: 'Crimson Text', serif;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .currency-input:focus {
+      outline: none;
+      border-color: var(--gold);
+      box-shadow: 0 0 20px rgba(212, 175, 55, 0.4), inset 0 0 10px rgba(212, 175, 55, 0.1);
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    .currency-symbol {
+      position: absolute;
+      right: 20px;
+      color: var(--gold);
+      font-family: 'Cinzel', serif;
+      font-size: 1.3rem;
+      pointer-events: none;
+      text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+    }
+
+    .exchange-info {
+      text-align: center;
+      margin-top: 30px;
+      padding: 25px;
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 6px;
+      border: 1px solid var(--border-gold);
+      position: relative;
+    }
+
+    .exchange-info::before {
+      content: '⚜';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--bank-wood);
+      padding: 5px 15px;
+      color: var(--gold);
+      font-size: 1.5rem;
+    }
+
+    .exchange-info p {
+      color: var(--text-dim);
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.8;
     }
 
     .about-section {
@@ -271,6 +526,18 @@
       border: 2px solid var(--border-gold);
       border-radius: 8px;
       text-align: center;
+      position: relative;
+    }
+
+    .about-section::before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      border-radius: 8px 8px 0 0;
     }
 
     .about-section h2 {
@@ -290,6 +557,16 @@
       font-style: italic;
     }
 
+    .ciri-reference {
+      margin-top: 30px;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.2);
+      border-left: 3px solid var(--gold);
+      border-radius: 4px;
+      font-style: italic;
+      color: var(--text-dim);
+    }
+
     footer {
       text-align: center;
       padding: 40px 20px;
@@ -301,128 +578,6 @@
 
     footer p {
       font-style: italic;
-    }
-
-    .exchange-section {
-      margin: 80px 0;
-      padding: 40px;
-      background: var(--parchment);
-      border: 2px solid var(--border-gold);
-      border-radius: 8px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-    }
-
-    .exchange-section h2 {
-      font-family: 'Cinzel', serif;
-      font-size: 2rem;
-      color: var(--gold);
-      margin-bottom: 30px;
-      letter-spacing: 2px;
-      text-align: center;
-    }
-
-    .exchange-rates {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-      margin-bottom: 30px;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 8px;
-    }
-
-    .rate-item {
-      text-align: center;
-      padding: 15px;
-      border: 1px solid var(--border-gold);
-      border-radius: 6px;
-      background: rgba(0, 0, 0, 0.1);
-    }
-
-    .rate-item .currency-name {
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      color: var(--gold);
-      margin-bottom: 8px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .rate-item .rate-value {
-      color: var(--text-light);
-      font-size: 0.95rem;
-      font-style: italic;
-    }
-
-    .converter {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
-      margin-top: 30px;
-    }
-
-    .currency-input-group {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .currency-input-group label {
-      font-family: 'Cinzel', serif;
-      font-size: 1rem;
-      color: var(--gold);
-      margin-bottom: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .currency-input-wrapper {
-      position: relative;
-      display: flex;
-      align-items: center;
-    }
-
-    .currency-input {
-      width: 100%;
-      padding: 12px 45px 12px 15px;
-      background: rgba(0, 0, 0, 0.3);
-      border: 2px solid var(--border-gold);
-      border-radius: 6px;
-      color: var(--text-light);
-      font-family: 'Crimson Text', serif;
-      font-size: 1.1rem;
-      transition: all 0.3s ease;
-    }
-
-    .currency-input:focus {
-      outline: none;
-      border-color: var(--gold);
-      box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
-      background: rgba(0, 0, 0, 0.4);
-    }
-
-    .currency-symbol {
-      position: absolute;
-      right: 15px;
-      color: var(--gold);
-      font-family: 'Cinzel', serif;
-      font-size: 1.1rem;
-      pointer-events: none;
-    }
-
-    .exchange-info {
-      text-align: center;
-      margin-top: 25px;
-      padding: 20px;
-      background: rgba(0, 0, 0, 0.2);
-      border-radius: 6px;
-      border: 1px solid var(--border-gold);
-    }
-
-    .exchange-info p {
-      color: var(--text-dim);
-      font-size: 0.95rem;
-      font-style: italic;
-      line-height: 1.8;
     }
 
     @media (max-width: 768px) {
@@ -439,8 +594,21 @@
         height: 280px;
       }
 
-      .total-price {
-        font-size: 2.2rem;
+      .characters-showcase {
+        gap: 20px;
+      }
+
+      .character-portrait {
+        width: 100px;
+        height: 100px;
+      }
+
+      .bank-content {
+        padding: 25px;
+      }
+
+      .converter {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -451,6 +619,25 @@
       <h1>The Artisan's Treasury</h1>
       <div class="decorative-line"></div>
       <p class="subtitle">Handcrafted Treasures from the Depths</p>
+      
+      <div class="characters-showcase">
+        <div class="character-portrait">
+          <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop" alt="Yennefer">
+          <div class="character-name">Yennefer</div>
+        </div>
+        <div class="character-portrait">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop" alt="Triss">
+          <div class="character-name">Triss</div>
+        </div>
+        <div class="character-portrait">
+          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200&h=200&fit=crop" alt="Ciri">
+          <div class="character-name">Ciri</div>
+        </div>
+      </div>
+
+      <div class="vesemir-quote">
+        A true craftsman knows that beauty lies not in perfection, but in the stories each piece carries. These treasures from the depths hold the whispers of the sea, just as we hold the memories of those we cherish.
+      </div>
     </header>
 
     <main>
@@ -502,53 +689,52 @@
         </div>
       </div>
 
-      <div class="total-section">
-        <div class="total-label">Total Collection Value</div>
-        <div class="total-price">70<span class="crown-icon">👑</span></div>
-        <p style="color: var(--text-dim); margin-top: 15px; font-style: italic;">Novigradian Crowns</p>
-      </div>
-
       <div class="exchange-section">
-        <h2>Currency Exchange</h2>
-        <div class="exchange-rates">
-          <div class="rate-item">
-            <div class="currency-name">Oren</div>
-            <div class="rate-value">1 Oren = 1 Crown</div>
-          </div>
-          <div class="rate-item">
-            <div class="currency-name">Crown</div>
-            <div class="rate-value">1 Crown = 1 Oren</div>
-          </div>
-          <div class="rate-item">
-            <div class="currency-name">Floren</div>
-            <div class="rate-value">1 Floren = 3 Crowns</div>
-          </div>
+        <div class="bank-header">
+          <h2 class="bank-title">Vivaldi Bank</h2>
+          <p class="bank-subtitle">Official Currency Exchange of Novigrad</p>
         </div>
-        <div class="converter">
-          <div class="currency-input-group">
-            <label>Orens</label>
-            <div class="currency-input-wrapper">
-              <input type="number" class="currency-input" id="orens" value="0" min="0" step="0.01" placeholder="0">
-              <span class="currency-symbol">₴</span>
+        <div class="bank-content">
+          <div class="exchange-rates">
+            <div class="rate-item">
+              <div class="currency-name">Oren</div>
+              <div class="rate-value">1 Oren = 1 Crown</div>
+            </div>
+            <div class="rate-item">
+              <div class="currency-name">Crown</div>
+              <div class="rate-value">1 Crown = 1 Oren</div>
+            </div>
+            <div class="rate-item">
+              <div class="currency-name">Floren</div>
+              <div class="rate-value">1 Floren = 3 Crowns</div>
             </div>
           </div>
-          <div class="currency-input-group">
-            <label>Crowns</label>
-            <div class="currency-input-wrapper">
-              <input type="number" class="currency-input" id="crowns" value="0" min="0" step="0.01" placeholder="0">
-              <span class="currency-symbol">👑</span>
+          <div class="converter">
+            <div class="currency-input-group">
+              <label>Orens</label>
+              <div class="currency-input-wrapper">
+                <input type="number" class="currency-input" id="orens" value="0" min="0" step="0.01" placeholder="0">
+                <span class="currency-symbol">₴</span>
+              </div>
+            </div>
+            <div class="currency-input-group">
+              <label>Crowns</label>
+              <div class="currency-input-wrapper">
+                <input type="number" class="currency-input" id="crowns" value="0" min="0" step="0.01" placeholder="0">
+                <span class="currency-symbol">👑</span>
+              </div>
+            </div>
+            <div class="currency-input-group">
+              <label>Florens</label>
+              <div class="currency-input-wrapper">
+                <input type="number" class="currency-input" id="florens" value="0" min="0" step="0.01" placeholder="0">
+                <span class="currency-symbol">₣</span>
+              </div>
             </div>
           </div>
-          <div class="currency-input-group">
-            <label>Florens</label>
-            <div class="currency-input-wrapper">
-              <input type="number" class="currency-input" id="florens" value="0" min="0" step="0.01" placeholder="0">
-              <span class="currency-symbol">₣</span>
-            </div>
+          <div class="exchange-info">
+            <p>All exchanges are processed according to the official rates established by the Vivaldi Bank. Rates are fixed and honored throughout the Northern Realms. No fees apply for standard currency conversion.</p>
           </div>
-        </div>
-        <div class="exchange-info">
-          <p>Convert between the currencies of the Northern Realms. Exchange rates are fixed and honored by all reputable merchants.</p>
         </div>
       </div>
 
@@ -560,6 +746,9 @@
           of nature's beauty and the artisan's dedication. These are not mere accessories, but treasures forged with 
           passion and skill.
         </p>
+        <div class="ciri-reference">
+          "Like Ciri's journey through different worlds, these pieces bridge the gap between the depths of the ocean and the surface, carrying with them the essence of adventure and discovery."
+        </div>
       </div>
     </main>
 

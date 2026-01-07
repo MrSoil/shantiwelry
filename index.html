@@ -1,0 +1,78 @@
+<!doctype html> <html lang="tr"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <title>Shello, [Adı] – Eğlencesine Takı Butiği</title> <meta name="description" content="Deniz kabuğu ve inci taneleriyle el yapımı takılar. Sipariş butonları gerçek ödeme almaz; yalnızca istek gönderir." /> <link rel="preconnect" href="https://fonts.googleapis.com"> <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@600&display=swap" rel="stylesheet"> <style> :root{--sand:#F6F0E8;--gold:#C8A24D;--silver:#B8BEC5;--text:#333;--white:#fff} *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;color:var(--text);background:var(--sand);line-height:1.6} .container{max-width:1000px;margin:0 auto;padding:24px} header{padding:48px 0;text-align:center} h1{font-family:Poppins,Inter;letter-spacing:.2px;font-weight:600;margin:0 0 8px} h2{margin:0 0 12px} .subtitle{color:#666} .btn{display:inline-block;background:var(--gold);color:#fff;padding:12px 18px;border-radius:999px;text-decoration:none;border:none;cursor:pointer;font-weight:600} .btn:hover{background:#b18e3f} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px} .card{background:#fff;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.08);overflow:hidden;display:flex;flex-direction:column} .card img{display:block;width:100%;height:180px;object-fit:cover;background:#eee} .card-content{padding:14px 14px 10px} .badge{position:absolute;margin:12px;background:var(--gold);color:#fff;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700} .card-top{position:relative} .small{font-size:13px;color:#666} footer{padding:40px 0;text-align:center;font-size:14px;color:#666} section{margin:24px 0 40px} .modal-backdrop{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:16px;z-index:50} .modal{background:#fff;max-width:520px;width:100%;border-radius:16px;padding:18px;box-shadow:0 6px 24px rgba(0,0,0,.2);position:relative} .modal h3{margin-top:0} .modal .btn{width:100%} .close{background:none;border:none;font-size:20px;position:absolute;top:10px;right:14px;cursor:pointer} input,select,textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:10px;margin:6px 0 12px;font:inherit} label{font-weight:600;font-size:14px} .disclaimer{font-size:12px;color:#777} hr{border:none;border-top:1px solid #eee;margin:12px 0} .kucuk{font-size:12px} </style> </head> <body> <header class="container"> <h1>Shello, [Adı]!</h1> <p class="subtitle">Sadece sana özel, eğlencesine bir takı dükkanı.</p> <a class="btn" href="#koleksiyon">Koleksiyona Bak</a> <p class="kucuk">Not: “Eğlencesine Sipariş Ver” butonları ödeme almaz; yalnızca bana istek gönderir.</p> </header> <main class="container"> <section id="koleksiyon"> <h2>Koleksiyonlar</h2> <div class="grid">
+  <div class="card">
+    <div class="card-top">
+      <span class="badge">En Sevilen</span>
+      <img src="https://placehold.co/600x400?text=Kabuk+Krali%C3%A7e+Kolye" alt="Kabuk Kraliçe Kolye">
+    </div>
+    <div class="card-content">
+      <h3>Kabuk Kraliçe Kolye</h3>
+      <p class="small">Ortada iri deniz kabuğu; altın‑gümüş boru boncuklar ve minik inciler.</p>
+      <button class="btn order-btn" data-product="Kabuk Kraliçe Kolye">Eğlencesine Sipariş Ver</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <img src="https://placehold.co/600x400?text=Ay+P%C4%B1r%C4%B1lt%C4%B1s%C4%B1+Halhal" alt="Ay Pırıltısı Halhal">
+    </div>
+    <div class="card-content">
+      <h3>Ay Pırıltısı Halhal</h3>
+      <p class="small">Minik boncuklar + tek inci çipi. Gecede küçük bir parıltı.</p>
+      <button class="btn order-btn" data-product="Ay Pırıltısı Halhal">Eğlencesine Sipariş Ver</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <img src="https://placehold.co/600x400?text=G%C3%BCn+I%C5%9F%C4%B1%C4%9F%C4%B1+Bileklik" alt="Gün Işığı Bileklik">
+    </div>
+    <div class="card-content">
+      <h3>Gün Işığı Bileklik</h3>
+      <p class="small">Altın‑gümüş karışık, her şeye uyan sade ışıltı.</p>
+      <button class="btn order-btn" data-product="Gün Işığı Bileklik">Eğlencesine Sipariş Ver</button>
+    </div>
+  </div>
+
+</div>
+</section> <section id="hakkinda"> <h2>Hakkında</h2> <p>Bu minik butik, [Adı] için yapıldı. Malzemelerim: deniz kabukları, sahte inciler, altın‑gümüş boru ve kum boncuklar, misina ve bolca sevgi.</p> </section> <section id="bakim"> <h2>Bakım & Ölçü</h2> <ul> <li>Su/parfüm/duşla temas ettirme.</li> <li>Yumuşak bezle sil, kuru sakla.</li> <li>Ölçü: İpi boynuna/ayak bileğine sar, cm’yi ölç.</li> </ul> </section> </main> <footer> <p>Bu site bir hediye deneyimi. Butonlar gerçek ödeme almaz; yalnızca bana istek gönderir.</p> </footer> <!-- Sipariş Formu (Lightbox) --> <div class="modal-backdrop" id="orderModal" aria-hidden="true"> <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"> <button class="close" aria-label="Kapat" onclick="closeModal()">×</button> <h3 id="modalTitle">Eğlencesine Sipariş</h3> <p class="disclaimer">Bu form ödeme toplamaz; isteğini bana e‑posta ile iletir.</p>
+<form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+  <input type="hidden" name="_subject" value="Eğlencesine Sipariş" />
+  <input type="hidden" name="_next" value="https://YOUR_USERNAME.github.io/YOUR_REPO/tesekkur.html" />
+  <input type="hidden" name="_captcha" value="false" />
+  <input type="hidden" name="Ürün" id="urunField" value="" />
+
+  <label>Boy/Uzunluk (cm)
+    <input name="Uzunluk" placeholder="Örn: 40 cm">
+  </label>
+
+  <label>Renk karışımı
+    <select name="Renk">
+      <option>Altın ağırlıklı</option>
+      <option>Gümüş ağırlıklı</option>
+      <option>Karışık</option>
+    </select>
+  </label>
+
+  <label>Eklemeler</label>
+  <label class="kucuk"><input type="checkbox" name="Ekstra" value="Mini kabuk"> Mini kabuk</label>
+  <label class="kucuk"><input type="checkbox" name="Ekstra" value="İnci tanesi"> İnci tanesi</label>
+  <label class="kucuk"><input type="checkbox" name="Ekstra" value="Fazla ışıltı"> Fazla ışıltı</label>
+
+  <label>Notlar
+    <textarea name="Notlar" rows="3" placeholder="Örn: Zincir biraz daha kısa olsun."></textarea>
+  </label>
+
+  <hr>
+
+  <label>Ad Soyad
+    <input name="Ad" required>
+  </label>
+
+  <label>E‑posta ya da Telefon
+    <input name="İletişim" required>
+  </label>
+
+  <button class="btn" type="submit">İsteğimi Gönder</button>
+  <p class="kucuk">Gönderince bana e‑posta gelir. Ben de yapıp sana getiririm. Ücret: kocaman bir sarılma.</p>
+</form>
+</div> </div> <script> const modal = document.getElementById('orderModal'); const productField = document.getElementById('urunField'); document.querySelectorAll('.order-btn').forEach(btn=>{ btn.addEventListener('click', ()=>{ productField.value = btn.dataset.product; openModal(); }); }); function openModal(){ modal.style.display='flex'; modal.setAttribute('aria-hidden','false'); } function closeModal(){ modal.style.display='none'; modal.setAttribute('aria-hidden','true'); } modal.addEventListener('click', (e)=>{ if(e.target===modal) closeModal(); }); </script> </body> </html>

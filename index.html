@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shantiwelry</title>
+  <title>Kaer Morhen Treasury – Handcrafted Jewelry</title>
   <meta name="description" content="Exquisite handcrafted jewelry inspired by the Northern Realms. Shells, pearls, and precious materials forged into timeless pieces." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -1462,7 +1462,7 @@
       <div class="grid">
         <div class="card">
           <div class="card-image">
-            <img src="https://placehold.co/600x400/2a2418/d4af37?text=Seashell+%26+Pearl+Necklace&font=Cinzel" alt="Seashell & Pearl Necklace">
+            <img src='necklace.jpeg' alt="Seashell & Pearl Necklace">
           </div>
           <div class="card-content">
             <h3>Seashell & Pearl Necklace</h3>
@@ -1470,8 +1470,8 @@
               A regal piece crafted from the finest sea treasures found along the shores of Skellige. The centerpiece features a magnificent seashell, 
               surrounded by lustrous pearls reminiscent of the White Wolf's medallion, and delicate fill materials, creating an elegant harmony of ocean and earth.
             </p>
-            <div class="witcher-reference">
-              "Worthy of a place in the treasury of Kaer Morhen, where witchers once kept their most precious artifacts."
+			<div class="witcher-reference">
+              "Click to get references by the maker!"
             </div>
             <ul class="materials">
               <li>Hand-selected seashells from Skellige's coast</li>
@@ -1481,7 +1481,7 @@
             </ul>
             <div class="price-section">
               <span class="price-label">Price</span>
-              <span class="price">35<span class="crown-icon">👑</span></span>
+              <span class="price">50<span class="crown-icon">👑</span></span>
             </div>
           </div>
         </div>
@@ -1492,12 +1492,13 @@
           </div>
           <div class="card-content">
             <h3>Pearl & Shell Bracelet</h3>
+            <h2>Coming Soon!</h2>
             <p class="card-description">
               An exquisite wrist adornment that captures the essence of the sea, much like the waters surrounding the isles of Skellige. Delicate pearls interwoven with 
-              carefully chosen shells and premium materials, forming a piece of timeless elegance that would complement any journey through the Northern Realms.
+              carefully chosen shells and premium materials, forming a piece of timeless elegance that would complement any journey through the Northern Realms. NOTE: Forged in stealth for the realm’s most dazzling, delightfully impatient lady.
             </p>
-            <div class="witcher-reference">
-              "A piece that would make even the merchants of Novigrad's Hierarch Square take notice."
+			<div class="witcher-reference">
+              "Click to get references by the maker!"
             </div>
             <ul class="materials">
               <li>Lustrous pearls, gathered from deep waters</li>
@@ -1516,6 +1517,7 @@
       <div class="exchange-section">
         <div class="bank-header">
           <h2 class="bank-title">Vivaldi Bank</h2>
+		  <h3 class="bank-title">NO DISCOUNT EVEN FOR SHANTI!</h3>
           <p class="bank-subtitle">Official Currency Exchange of Novigrad</p>
         </div>
         <div class="bank-content">
@@ -1797,12 +1799,12 @@
     document.querySelectorAll('.witcher-reference').forEach(ref => {
       ref.addEventListener('click', function() {
         const quotes = [
-          { msg: '"Medallion\'s humming..."', char: 'Geralt' },
-          { msg: '"Place of power, it\'s gotta be."', char: 'Geralt' },
-          { msg: '"Looks like rain."', char: 'Geralt' },
-          { msg: '"Winds howling."', char: 'Geralt' },
-          { msg: '"Damn, you\'re gorgeous!"', char: 'Geralt' }
-        ];
+			{ msg: '"Medallion\'s humming... must be you."', char: 'MrSoil of Rivia' },
+			{ msg: '"Place of power—pretty sure it\'s you."', char: 'MrSoil of Rivia' },
+			{ msg: '"Looks like rain—cuddle weather."', char: 'MrSoil of Rivia' },
+			{ msg: '"Winds howling—your smile\'s louder."', char: 'MrSoil of Rivia' },
+			{ msg: '"Damn, you\'re gorgeous!"', char: 'MrSoil of Rivia' }
+		];
         const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
         showToast('Witcher\'s Wisdom', randomQuote.msg, randomQuote.char);
       });
@@ -1907,4 +1909,3 @@
   </script>
 </body>
 </html>
-
